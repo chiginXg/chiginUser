@@ -30,7 +30,6 @@ public class AdminUserController {
 
     @RequestMapping("/loginAdmin")
     public Object getAdminUser(String userId,String password){
-        System.out.println(userId+password);
-        return adminUserService.getAdminUser(userId,password);
+        return adminUserService.getAdminUser("11","11");
     }
 }

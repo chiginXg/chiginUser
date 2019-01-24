@@ -3,22 +3,25 @@
 
 <mapper namespace="com.admin.user.mapper.AdminUserMapper">
     <resultMap id="resultMap" type="com.admin.user.dao.AdminUser" >
-        <result column="user_id" property="userId"/>
-        <result column="user_name" property="userName"/>
+        <result column="userid" property="userId"/>
+        <result column="username" property="userName"/>
         <result column="password" property="password"/>
         <result column="email" property="email"/>
         <result column="phone" property="phone"/>
         <result column="sex" property="sex"/>
     </resultMap>
 
-    <select id="getAdminUser" resultType="java.lang.Integer">
+    <select id="getAdminUser" resultMap="resultMap">
         select
-        count(1)
+        *
         from user
         where
-        user_id = #{userId}
+        userid = #{userId}
         and
         password = #{password}
+    </select>
+    <select id="selectAll" resultType="com.admin.user.dao.AdminUser">
+        select * from user
     </select>
 
     <insert id="addUser" parameterType="com.admin.user.dao.AdminUser">

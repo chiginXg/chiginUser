@@ -7,9 +7,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
-@ComponentScan(basePackages={"com.admin.user.service"})
+//@ComponentScan(basePackages={"com.admin.user.service"})
 @MapperScan({"com.admin.user.mapper"})
-@ImportResource({"classpath:*/mapper/Mapper.xml"})
+//@ImportResource({"classpath:*/mapper/Mapper.xml"})
 public class UserApplication {
 
     public static void main(String[] args) {

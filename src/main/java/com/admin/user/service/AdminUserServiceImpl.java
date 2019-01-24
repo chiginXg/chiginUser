@@ -17,15 +17,9 @@ public class AdminUserServiceImpl implements AdminUserService{
         return adminUserMapper.addUser(user)>0;
     }
 
-//    @Override
-//    public boolean updateUserPassword(AdminUser user) {
-//        return false;
-//    }
 
     @Override
     public AdminUser getAdminUser(String userId, String password) {
-        System.out.println("chishila");
-        int i =adminUserMapper.getAdminUser(userId,password);
-        return new AdminUser();
+        return adminUserMapper.selectAll();
     }
 }
