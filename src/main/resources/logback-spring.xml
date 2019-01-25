@@ -61,7 +61,7 @@
     <logger name="jdbc.sqlonly" level="OFF" additivity="false">
         <appender-ref ref="STDOUT" />
     </logger>
-    <logger name="jdbc.resultset" level="INFO" additivity="false">
+    <logger name="jdbc.resultset" level="OFF" additivity="false">
         <appender-ref ref="STDOUT" />
     </logger>
     <logger name="jdbc.connection" level="OFF" additivity="false">
