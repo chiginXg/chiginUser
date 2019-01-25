@@ -1,5 +1,6 @@
 package com.admin.user.controller;
 
+import com.admin.user.ResultBean.ResultData;
 import com.admin.user.dao.AdminUser;
 import com.admin.user.service.AdminUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class AdminUserController {
     }
 
     @RequestMapping("/loginAdmin")
-    public Object getAdminUser(String userId,String password){
-        return adminUserService.getAdminUser("11","11");
+    public Object loginAdmin(String userId,String password){
+        return adminUserService.getAdminUser(userId,password);
     }
 }

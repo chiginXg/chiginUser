@@ -1,5 +1,6 @@
 package com.admin.user.service;
 
+import com.admin.user.ResultBean.ResultData;
 import com.admin.user.dao.AdminUser;
 
 public interface AdminUserService {
@@ -7,7 +8,7 @@ public interface AdminUserService {
      * 注册用户
      * @return
      */
-    boolean addUser(AdminUser user);
+    ResultData addUser(AdminUser user);
 //    boolean updateUserPassword(AdminUser user);
-    AdminUser getAdminUser(String userId, String password);
+    ResultData getAdminUser(String userId, String password);
 }
