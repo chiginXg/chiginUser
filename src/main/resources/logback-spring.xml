@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
+    <define name="ip" class="com.admin.common.logback.IpProperty" />
+    <springProperty scope="context" name="port" source="server.port" />
+    <springProperty scope="context" name="level" source="logging.pattern.level" />
+    <property name="path" value="./log" />
+    <property name="appname" value="admin-user" />
+    <!-- app -->
+    <appender name="file"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${path}/${appname}_${ip}_${port}.log</File>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5level] [%-5thread] %logger{20}
+                -%msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>${level}</level>
+        </filter>
+        <append>true</append>
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${path}/${appname}_${ip}_${port}.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+        </rollingPolicy>
+    </appender>
+    <!-- jdbc -->
+    <appender name="jdbcfile"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${path}/${appname}_${ip}_${port}_jdbc.log
+        </File>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5level] [%-5thread] %logger{20} -
+                %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>debug</level>
+        </filter>
+        <append>true</append>
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${path}/${appname}_${ip}_${port}_jdbc.%d{yyyy-MM-dd}(%i).log
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>200MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+    <!--输出到控制台配置 -->
+    <appender name="STDOUT"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    <logger name="jdbc.sqltiming" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="jdbc.sqlonly" level="OFF" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="jdbc.resultset" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="jdbc.connection" level="OFF" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="jdbc.audit" level="OFF" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <root level="${level}">
+        <appender-ref ref="file" />
+    </root>
+
+</configuration>

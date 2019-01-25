@@ -1,12 +1,17 @@
 spring:
+  profiles:
+    active: dev
   datasource:
-    url: jdbc:mysql://39.106.135.201:3306/wugang?useSSL=false&useUnicode=true&characterEncoding=utf8
+    url: jdbc:log4jdbc:mysql://39.106.135.201:3306/wugang?useSSL=false&useUnicode=true&characterEncoding=utf8
     username: root
     password: 123456
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
 
 server:
   port: 8080
   servlet:
     context-path: /user
 
+logging:
+  pattern:
+    level: info
