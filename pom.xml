@@ -63,17 +63,6 @@
             <version>1.16</version>
         </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>com.spring4all</groupId>-->
-            <!--<artifactId>spring-boot-starter-swagger</artifactId>-->
-            <!--<version>1.5.1.RELEASE</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>com.wugang</groupId>-->
-            <!--<artifactId>swagger2-spring-boot-starter</artifactId>-->
-            <!--<version>1.0.1.RELEASE</version>-->
-        <!--</dependency>-->
 
         <dependency>
             <groupId>com.alibaba</groupId>
