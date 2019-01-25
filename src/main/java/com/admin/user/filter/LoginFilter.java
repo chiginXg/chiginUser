@@ -1,11 +1,10 @@
-package com.admin.common.filter;
+package com.admin.user.filter;
 
 import com.admin.user.ResultBean.ResultCode;
 import com.admin.user.ResultBean.ResultData;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
