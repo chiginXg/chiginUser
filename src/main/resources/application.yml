@@ -6,6 +6,8 @@ spring:
     username: root
     password: 123456
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+  kafka:
+    client-id:
 
 server:
   port: 8080
@@ -15,3 +17,19 @@ server:
 logging:
   pattern:
     level: info
+
+
+kafka:
+  broker: 39.106.135.201:9099
+  zookeeperConnet: 39.106.135.201:2181,39.106.135.201:3181,39.106.135.201:4181
+  commitInterval: 2000
+  producerGroup: crawl
+  topic: test
+  producerThreadNum: 1
+  autoCommit: true
+  consumerTopic:
+    messagePoll:
+      name: test
+      group: user
+      consumerNumber: 2
+      workThreadNumber: 5
