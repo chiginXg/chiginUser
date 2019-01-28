@@ -20,7 +20,7 @@ logging:
 
 
 kafka:
-  broker: 39.106.135.201:9099
+  broker: 39.106.135.201:9092
   zookeeperConnet: 39.106.135.201:2181,39.106.135.201:3181,39.106.135.201:4181
   commitInterval: 2000
   producerGroup: crawl
