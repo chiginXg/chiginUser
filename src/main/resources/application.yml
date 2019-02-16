@@ -21,15 +21,15 @@ logging:
 
 kafka:
   broker: 39.106.135.201:9092
-  zookeeperConnet: 39.106.135.201:2181,39.106.135.201:3181,39.106.135.201:4181
+  zookeeperConnet: 39.106.135.201:2181
   commitInterval: 2000
   producerGroup: crawl
-  topic: test
+  topic: test1
   producerThreadNum: 1
   autoCommit: true
   consumerTopic:
     messagePoll:
-      name: test
+      name: test1
       group: user
       consumerNumber: 2
       workThreadNumber: 5

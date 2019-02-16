@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
-//@ComponentScan(basePackages={"com.admin.user.service"})
+@ComponentScan(basePackages={"com.admin.user.kafka"})
 @MapperScan({"com.admin.user.mapper"})
 public class UserApplication {
 
