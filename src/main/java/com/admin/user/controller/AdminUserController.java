@@ -26,6 +26,7 @@ public class AdminUserController {
         user.setPassword(password);
         user.setPhone(phone);
         user.setUserName(userName);
+        user.setLevel(0);
         return adminUserService.addUser(user);
     }
 
@@ -33,4 +34,6 @@ public class AdminUserController {
     public Object loginAdmin(String userId,String password){
         return adminUserService.getAdminUser(userId,password);
     }
+    
 }
+

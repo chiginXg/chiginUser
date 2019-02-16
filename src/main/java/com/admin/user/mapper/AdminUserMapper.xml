@@ -9,6 +9,7 @@
         <result column="email" property="email"/>
         <result column="phone" property="phone"/>
         <result column="sex" property="sex"/>
+        <result column="level" property="level"/>
     </resultMap>
 
     <select id="getAdminUser" resultMap="resultMap">
@@ -26,9 +27,9 @@
 
     <insert id="addUser" parameterType="com.admin.user.dao.AdminUser">
       insert into user
-      (user_name,password,email,phone,sex)
+      (user_name,password,email,phone,sex,level)
       value
-      (#{userName},#{password},#{email},#{phone},#{sex})
+      (#{userName},#{password},#{email},#{phone},#{sex},#{level})
     </insert>
 
 
