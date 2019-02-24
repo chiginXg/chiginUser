@@ -11,7 +11,7 @@ import javax.annotation.PostConstruct;
 @Slf4j
 @Component
 public class ComsumerInit {
-    @PostConstruct
+//    @PostConstruct
     public void start(){
         new Thread(()->{
             new MsgConsumer();

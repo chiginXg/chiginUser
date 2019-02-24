@@ -1,6 +1,6 @@
 spring:
-  profiles:
-    active: dev
+  application:
+    name: user-service
   datasource:
     url: jdbc:log4jdbc:mysql://39.106.135.201:3306/wugang?useSSL=false&useUnicode=true&characterEncoding=utf8
     username: root
@@ -14,9 +14,18 @@ server:
   servlet:
     context-path: /user
 
+
 logging:
   pattern:
     level: info
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.180.1:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    hostname: user-service
 
 
 kafka:

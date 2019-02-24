@@ -72,6 +72,12 @@ public class MsgProducer {
 //        service("1");
 //    }
 
+
+//    public static void main(String[] args) {
+//        String ss = "http://10.0.0.1:80/";
+//        int i = ss.indexOf("/", 7);
+//        System.out.println(i);
+//    }
 }
 
 
